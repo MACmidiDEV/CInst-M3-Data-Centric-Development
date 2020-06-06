@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Live Links Learning Page -->
+<div class="vid responsive-video">		
+</div>
+<script src='https://meet.jit.si/external_api.js'></script>
+<script type="text/javascript">
+	const domain = 'meet.jit.si';
+	const options = {
+		roomName: 'ToodlerLearning',
+		// width: 300,
+		height: 600,
+		parentNode: document.querySelector('#meet')
+	};
+	const api = new JitsiMeetExternalAPI(domain, options);
+</script>
+{% endblock %}
