@@ -9,10 +9,16 @@
 </head>
 <body>
 	<header>
-	<!-- navbar content here  -->
-		<nav class="navbar sticky-action navbar-expand-lg navbar-light">
-		</nav>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Little Links</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"><i class="material-icons left">menue</i>Link with Left Icon</a></li>
+      </ul>
+    </div>
+  </nav>
   </header>
+  {% block content %} {% endblock %}
 	<footer>
   </footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
