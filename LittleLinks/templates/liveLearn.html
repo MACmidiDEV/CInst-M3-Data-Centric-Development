@@ -1,26 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<style>
-	#meet {
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
-<div id="meet">		
+<head>
+	<title>LiveLearn | Link Learning</title>
+</head>
+<nav id="inject" class="navbar navbar-expand-lg navbar-light bg-light" style="visibility: hidden;">
+</nav>
+<div id="meet" class="jumbotron" style="height:100vh;">
 </div>
 <script src='https://meet.jit.si/external_api.js'></script>
 <script type="text/javascript">
 	const domain = 'meet.jit.si';
 	const options = {
-		roomName: 'ToodlerLearning',
-		width: '100%',
-		height: '100%',
+		roomName: 'LittleLinksLearning',
 		parentNode: document.querySelector('#meet')
 	};
 	const api = new JitsiMeetExternalAPI(domain, options);
 </script>
-
 {% endblock %}
-
