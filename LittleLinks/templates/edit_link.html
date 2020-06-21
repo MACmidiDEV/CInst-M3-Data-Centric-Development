@@ -1,0 +1,37 @@
+{% extends 'base.html'%} {% block content %}
+<style>
+    body {
+        background-color: rgba(64, 224, 208, 0.45);
+    }
+</style>
+<div class="inject">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark"></nav>
+</div>
+<div class="row">
+    <form action="{{ url_for('update_link', link_id=link._id) }}" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">library_add</i>
+                <input name="link_name" id="link_name" type="text" class="validate" value="{{link.category_name}}">
+                <label for="link_name">Learning Link Category</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">poll</i>
+                <input name="link_name" id="link_name" type="text" class="validate" value="{{link.learn_link}}">
+                <label for="link_name">Learning Link</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">poll</i>
+                <input name="link_name" id="link_name" type="text" class="validate" value="{{link.mentor_message}}">
+                <label for="link_name">Learning Link Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <button class="centPos btn waves-effect waves-light" type="submit" name="action">
+            Edit Category
+        <i class="material-icons right">playlist_add</i>
+      </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

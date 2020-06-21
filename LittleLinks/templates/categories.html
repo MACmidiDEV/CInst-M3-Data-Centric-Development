@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+    body {
+        background-image: url("./static/images/pinkYellowPen.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<div class="inject">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    </nav>
+</div>
+<div class="row">
+    <a href="{{ url_for('add_category') }}" class="waves-effect waves-light btn-large">Add Category<i class="material-icons right">playlist_add</i></a>
+</div>
+<div class="row">
+    <ul class="collapsible popout">
+        {% for category in Categories %}
+        <li>
+            <div class="collapsible-header">
+                <div class="col s3">
+                    <i class="material-icons">verified_user</i>
+                    <a href="{{url_for('edit_category', category_id=category._id)}}" class="waves-effect waves-light btn blue btn_small">Edit</a>
+                    <a href="{{url_for('delete_category', category_id=category._id)}}" class="waves-effect waves-light btn red btn_small">Done</a>
+                </div>
+                <div class="col s9">
+                    <strong>{{category.category_name}}</strong>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<h1 class="endLogo">Little<span><small>LINKS</small></span></h1>
+{% endblock %}

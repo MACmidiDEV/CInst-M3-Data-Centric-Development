@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  body {
+    background-image: url("https://images.unsplash.com/photo-1578852612716-854e527abf2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+  }
+
+  #learnVid {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<div class="inject">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row">
+  {% for learn in Learning_Links %}
+  <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>
+        <h4>{% learn.category_name %}</h4>
+      </div>
+      <div class="collapsible-body"><span>{% learn.mentor_message %}</span></div>
+    </li>
+  </ul>
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}
